@@ -484,21 +484,21 @@ func (s *Server) Close() {
 }
 
 func (s *Server) SendClientToLogin(client *Client) {
-	s.mutex.Lock()
+	// s.mutex.Lock()
 	s.Login <- client
-	s.mutex.Unlock()
+	// s.mutex.Unlock()
 }
 
 func (s *Server) SendClientToLogout(client *Client) {
-	s.mutex.Lock()
+	// s.mutex.Lock()
 	s.Logout <- client
-	s.mutex.Unlock()
+	// s.mutex.Unlock()
 }
 
 func (s *Server) SendMessageToTransmit(message []byte) {
-	s.mutex.Lock()
+	// s.mutex.Lock()
 	s.Transmit <- message
-	s.mutex.Unlock()
+	// s.mutex.Unlock()
 }
 
 func (s *Server) RemoveClient(uuid string) {
